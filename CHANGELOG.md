@@ -7,6 +7,16 @@ All notable changes in this project will be documented in this file.
 
 ### Init
 
+* **Init:** initial comit ([](https://github.com/omnixys/logger-java/commit/3426e0cb38b121c4abbd52670730b7f11b8e71cb))
+
+### Other
+
+* **Other:** Initial commit ([](https://github.com/omnixys/logger-java/commit/e11957d40784259857dd9497e87230bb8aaf9365))
+
+## 1.0.0 (2026-03-22)
+
+### Init
+
 * **Init:** Omnixys JAAVA observability package ([](https://github.com/omnixys/logger-java/commit/4229f8f2aee3aa7ef4fd7150421badd1181c4136))
 
 ### Logger
