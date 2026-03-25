@@ -3,6 +3,12 @@
 All notable changes in this project will be documented in this file.
 
 
+## [2.0.0](https://github.com/omnixys/logger-java/compare/v1.0.0...v2.0.0) (2026-03-25)
+
+### Tracing
+
+* **Tracing:** Add tracing support to logger and Kafka transport ([](https://github.com/omnixys/logger-java/commit/cf1a478545f4c6753d12264d54452e07922de972))
+
 ## 1.0.0 (2026-03-22)
 
 ### Init
