@@ -14,6 +14,8 @@ import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.omnixys.logger.utils.Constants.*;
+
 @Slf4j
 public class OmnixysLogger {
 
@@ -48,21 +50,21 @@ public class OmnixysLogger {
 
         ITraceContext trace = TraceContextExtractor.current();
 
-        Map<String, String> metadata = new HashMap<>();
+        Map<String, Object> metadata = new HashMap<>();
 
-        if (trace.isValid()) {
-            metadata.put("traceId", trace.traceId());
-            metadata.put("spanId", trace.spanId());
-            metadata.put("sampled", String.valueOf(trace.sampled()));
-        }
+//        if (trace.isValid()) {
+//            metadata.put(TRACE_ID, trace.traceId());
+//            metadata.put(SPAN_ID, trace.spanId());
+//            metadata.put(SAMPLED, String.valueOf(trace.sampled()));
+//        }
 
         log.info("traceId: {}", trace.traceId());
         log.info("spanId: {}", trace.spanId());
         log.info("sampled: {}", trace.sampled());
 
         // optional: add method/class also into metadata (for consistency with Kafka)
-        if (caller.method() != null) metadata.put("method", caller.method());
-        if (caller.clazz() != null) metadata.put("clazz", caller.clazz());
+        if (caller.method() != null) metadata.put(METHOD, caller.method());
+        if (caller.clazz() != null) metadata.put(CLAZZ, caller.clazz());
 
         LogDTO dto = new LogDTO(
                 service,

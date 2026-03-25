@@ -18,7 +18,7 @@ java {
 }
 
 repositories {
-    //mavenLocal()
+    // mavenLocal()
     mavenCentral()
 
     maven {
@@ -44,7 +44,8 @@ dependencyManagement {
 }
 
 dependencies {
-    api("com.omnixys.kafka:omnixys-kafka:1.0.0")
+    //api("com.omnixys.kafka:omnixys-kafka:1.0.0")
+    api("com.omnixys.kafka:omnixys-kafka:2.0.0")
 
     // Jackson for structured logs
     implementation("com.fasterxml.jackson.core:jackson-databind")

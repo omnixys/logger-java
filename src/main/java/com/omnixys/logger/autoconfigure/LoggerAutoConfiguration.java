@@ -6,6 +6,7 @@ import com.omnixys.logger.logging.OmnixysLogger;
 import com.omnixys.logger.property.LoggerProperties;
 import com.omnixys.logger.transport.KafkaLogTransport;
 import com.omnixys.logger.transport.LogTransport;
+import com.omnixys.observability.api.TracePropagation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.*;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -36,10 +37,12 @@ public class LoggerAutoConfiguration {
     @ConditionalOnBean(KafkaProducerService.class)
     public LogTransport transport(
             KafkaProducerService producer,
+            TracePropagation<?> tracing,
             LoggerProperties props
     ) {
         return new KafkaLogTransport(
                 producer,
+                tracing,
                 props.getKafka().getTopic()
         );
     }
@@ -48,10 +51,12 @@ public class LoggerAutoConfiguration {
     @ConditionalOnMissingBean
     public AsyncBatchLogger batch(
             LogTransport transport,
+            TracePropagation<?> tracing,
             LoggerProperties props
     ) {
         return new AsyncBatchLogger(
                 transport,
+                tracing,
                 props.getBatch().getMaxSize(),
                 props.getBatch().getFlushIntervalMs()
         );
