@@ -7,7 +7,7 @@ plugins {
 
 group = findProperty("group") as String
 version = findProperty("version") as String
-description = "Omnixys Logger Package"
+description = "Omnixys logger Spring Integration Package"
 
 java {
     toolchain {
@@ -44,8 +44,7 @@ dependencyManagement {
 }
 
 dependencies {
-    //api("com.omnixys.kafka:omnixys-kafka:1.0.0")
-    api("com.omnixys.kafka:omnixys-kafka:2.0.0")
+    api("com.omnixys:kafka:1.0.0")
 
     // Jackson for structured logs
     implementation("com.fasterxml.jackson.core:jackson-databind")
@@ -97,13 +96,13 @@ publishing {
             from(components["java"])
 
             groupId = project.group.toString()
-            artifactId = "omnixys-logger"
+            artifactId = findProperty("artifactId") as String
             version = project.version.toString()
 
             pom {
-                name.set("Omnixys logger")
-                description.set("Omnixys logger Spring Integration Package")
-                url.set("https://github.com/omnixys/logger-java")
+                name.set(findProperty("name") as String)
+                description.set("$description")
+                url.set(findProperty("url") as String)
 
                 licenses {
                     license {
