@@ -14,6 +14,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 /**
  * Non-blocking async batch logger.
  */
+@Deprecated(forRemoval = true)
 public class AsyncBatchLogger {
 
     private final LogTransport transport;
@@ -47,18 +48,26 @@ public class AsyncBatchLogger {
         TraceContextSnapshot snapshot = tracing.capture();
         TraceContext traceContext = tracing.currentContext();
 
-        queue.offer(new ContextAwareLog(snapshot, log, traceContext));
+        boolean accepted = queue.offer(new ContextAwareLog(snapshot, log, traceContext));
+        if (!accepted) {
+            transport.send(log, traceContext);
+        }
     }
 
     private void flush() {
-        while (!queue.isEmpty()) {
-            ContextAwareLog entry = queue.poll();
+        try {
+            while (!queue.isEmpty()) {
+                ContextAwareLog entry = queue.poll();
 
-            if (entry != null) {
-                try (var scope = entry.snapshot().activate()) {
-                    transport.send(entry.log(), entry.traceContext());
+                if (entry != null) {
+                    try (var scope = entry.snapshot().activate()) {
+                        transport.send(entry.log(), entry.traceContext());
+                    }
                 }
             }
+        } catch (Exception e) {
+            Thread currentThread = Thread.currentThread();
+            currentThread.getUncaughtExceptionHandler().uncaughtException(currentThread, e);
         }
     }
 

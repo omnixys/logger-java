@@ -4,6 +4,7 @@ import com.omnixys.observability.api.TraceContext;
 import com.omnixys.observability.api.TraceContextSnapshot;
 import io.opentelemetry.context.Context;
 
+@Deprecated(forRemoval = true)
 public record ContextAwareLog(
         TraceContextSnapshot snapshot,
         LogDTO log,

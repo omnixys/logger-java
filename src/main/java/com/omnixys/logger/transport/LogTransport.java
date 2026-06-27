@@ -6,7 +6,10 @@ import com.omnixys.observability.api.TraceContext;
 /**
  * Transport abstraction for sending logs.
  * Allows decoupling from Kafka or other systems.
+ *
+ * @deprecated Replaced by standard SLF4J + MDC enrichment.
  */
+@Deprecated(forRemoval = true)
 public interface LogTransport {
 
     /**

@@ -1,13 +1,13 @@
 package com.omnixys.logger.logging;
 
+import com.omnixys.context.ContextAccessor;
+import com.omnixys.context.ContextSnapshot;
 import com.omnixys.logger.model.LogDTO;
 import com.omnixys.logger.model.LogLevel;
 import com.omnixys.logger.utils.LogFormatter;
 import com.omnixys.logger.utils.StackWalkerUtil;
 import com.omnixys.observability.context.ITraceContext;
 import com.omnixys.observability.context.TraceContextExtractor;
-import io.opentelemetry.api.trace.Span;
-import io.opentelemetry.context.Context;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.Instant;
@@ -17,6 +17,7 @@ import java.util.Map;
 import static com.omnixys.logger.utils.Constants.*;
 
 @Slf4j
+@Deprecated(forRemoval = true)
 public class OmnixysLogger {
 
     private final String service;
@@ -52,17 +53,21 @@ public class OmnixysLogger {
 
         Map<String, Object> metadata = new HashMap<>();
 
-//        if (trace.isValid()) {
-//            metadata.put(TRACE_ID, trace.traceId());
-//            metadata.put(SPAN_ID, trace.spanId());
-//            metadata.put(SAMPLED, String.valueOf(trace.sampled()));
-//        }
+        if (trace.isValid()) {
+            metadata.put(TRACE_ID, trace.traceId());
+            metadata.put(SPAN_ID, trace.spanId());
+            metadata.put(SAMPLED, String.valueOf(trace.sampled()));
+        }
 
-        log.info("traceId: {}", trace.traceId());
-        log.info("spanId: {}", trace.spanId());
-        log.info("sampled: {}", trace.sampled());
+        ContextSnapshot ctx = ContextAccessor.get();
+        if (ctx != null) {
+            if (ctx.correlationId() != null) metadata.put(CORRELATION_ID, ctx.correlationId());
+            if (ctx.tenant() != null) metadata.put(TENANT_ID, ctx.tenant().tenantId());
+            if (ctx.principal() != null && ctx.principal().actorId() != null) {
+                metadata.put(ACTOR_ID, ctx.principal().actorId());
+            }
+        }
 
-        // optional: add method/class also into metadata (for consistency with Kafka)
         if (caller.method() != null) metadata.put(METHOD, caller.method());
         if (caller.clazz() != null) metadata.put(CLAZZ, caller.clazz());
 
@@ -71,9 +76,9 @@ public class OmnixysLogger {
                 level,
                 message,
                 Instant.now(),
-                metadata
-
-
+                metadata,
+                null,
+                null
         );
 
         batch.submit(dto);

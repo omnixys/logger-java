@@ -3,6 +3,7 @@ package com.omnixys.logger.utils;
 /**
  * Lightweight SLF4J-style formatter.
  */
+@Deprecated(forRemoval = true)
 public final class LogFormatter {
 
     private LogFormatter() {}

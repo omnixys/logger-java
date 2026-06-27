@@ -18,7 +18,13 @@ import static com.omnixys.logger.utils.Constants.*;
 /**
  * Kafka-based implementation of LogTransport.
  * Delegates to central Kafka package.
+ *
+ * @deprecated Replaced by standard SLF4J + MDC enrichment.
+ *             The platform now provides MDC context propagation via
+ *             ContextFilter (correlationId, requestId, tenantId, actorId, traceId).
+ *             Use SLF4J directly for structured logging.
  */
+@Deprecated(forRemoval = true)
 @RequiredArgsConstructor
 public class KafkaLogTransport implements LogTransport {
 
