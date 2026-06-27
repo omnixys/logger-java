@@ -82,7 +82,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 25
+          java-version: 26
 
       # 🔥 SINGLE SOURCE OF TRUTH = gradle.properties
       - name: Extract version from gradle.properties
