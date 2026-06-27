@@ -7,6 +7,45 @@ All notable changes in this project will be documented in this file.
 
 ### CD/CI
 
+* **CD/CI:** add action workflows ([](https://github.com/omnixys/logger-java/commit/fedb5bb6a36a5545b91bcc2878d206f0ef660ecf))
+* **CD/CI:** add action workflows ([](https://github.com/omnixys/logger-java/commit/056a59937a919f76d137cf8fb815fda4531d3943))
+* **CD/CI:** add action workflows ([](https://github.com/omnixys/logger-java/commit/fae031ed45d97090872f2f65324a7d676eaa4c41))
+
+### Init
+
+* **Init:** initial comit ([](https://github.com/omnixys/logger-java/commit/3426e0cb38b121c4abbd52670730b7f11b8e71cb))
+
+### Other
+
+* **Other:** Initial commit ([](https://github.com/omnixys/logger-java/commit/e11957d40784259857dd9497e87230bb8aaf9365))
+* **Other:** Merge branch 'main' of https://github.com/omnixys/logger-java ([](https://github.com/omnixys/logger-java/commit/3062340ff869685b305720efa27ff39bb0303d30))
+* **Other:** Merge branch 'main' of https://github.com/omnixys/logger-java ([](https://github.com/omnixys/logger-java/commit/491d97213a74875b6eabb5ad5defd1205247788b))
+
+### Release
+
+* **Release:** 1.0.0 [skip ci] ([](https://github.com/omnixys/logger-java/commit/f76f6d2629aedf3e79cf143b22a31505f12bc232))
+* **Release:** 1.0.0 [skip ci] ([](https://github.com/omnixys/logger-java/commit/fda362ea0ca38846b4e31525c7a09174a25a15fd))
+* **Release:** 1.0.0 [skip ci] ([](https://github.com/omnixys/logger-java/commit/9a78cdf7878420475cbe28cb26c83ec557b9d71e))
+* **Release:** 1.0.0 [skip ci] ([](https://github.com/omnixys/logger-java/commit/8e0544c32c81cf41a13695dc5242d1dd90afe4a8))
+* **Release:** 1.0.0 [skip ci] ([](https://github.com/omnixys/logger-java/commit/ef55b318a01fccfb44234cef4675a5a97f3b1a9a))
+* **Release:** 2.0.0 [skip ci] ([](https://github.com/omnixys/logger-java/commit/99ae5f3c8389a7458b3278fbf64c8dfd9d21b62c))
+
+### T
+
+* **T:** t ([](https://github.com/omnixys/logger-java/commit/173800b34ad43c03aeff6cba9c48d7c4125dd8cf))
+
+### Tracing
+
+* **Tracing:** Add tracing support to logger and Kafka transport ([](https://github.com/omnixys/logger-java/commit/cf1a478545f4c6753d12264d54452e07922de972))
+
+### Z
+
+* **Z:** t ([](https://github.com/omnixys/logger-java/commit/7b68e1a32f96270cba383db961f94571670d6e01))
+
+## 1.0.0 (2026-06-27)
+
+### CD/CI
+
 * **CD/CI:** add action workflows ([](https://github.com/omnixys/logger-java/commit/056a59937a919f76d137cf8fb815fda4531d3943))
 * **CD/CI:** add action workflows ([](https://github.com/omnixys/logger-java/commit/fae031ed45d97090872f2f65324a7d676eaa4c41))
 
