@@ -14,15 +14,7 @@ public class LoggerProperties {
 
     private String serviceName = "unknown-service";
 
-    private Kafka kafka = new Kafka();
     private Batch batch = new Batch();
-
-    @Getter
-    @Setter
-    public static class Kafka {
-        private boolean enabled = true;
-        private String topic = "logstream.input";
-    }
 
     @Getter
     @Setter
