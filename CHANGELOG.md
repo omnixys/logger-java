@@ -3,6 +3,13 @@
 All notable changes in this project will be documented in this file.
 
 
+## [1.0.1](https://github.com/omnixys/logger-java/compare/v1.0.0...v1.0.1) (2026-07-23)
+
+### Logger
+
+* **Logger:** delegate compatibility API to SLF4J ([](https://github.com/omnixys/logger-java/commit/3a6949872464c566e25e09c7973a32ae2d892602))
+* **Logger:** remove deprecated Kafka log transport ([](https://github.com/omnixys/logger-java/commit/3e74e6fe1a943d6770bb5c36df004e9ac0c86f82))
+
 ## 1.0.0 (2026-06-27)
 
 ### CD/CI
