@@ -47,6 +47,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -o pipefail
           npx semantic-release | tee log.txt
 
           if grep -q "Published release" log.txt; then
