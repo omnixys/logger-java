@@ -3,6 +3,7 @@ plugins {
     `maven-publish`
     id("org.springframework.boot") version "4.1.0" apply false
     id("io.spring.dependency-management") version "1.1.7"
+    id("com.github.ben-manes.versions") version "0.52.0"
 }
 
 
