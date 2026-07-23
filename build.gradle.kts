@@ -23,19 +23,6 @@ repositories {
     mavenCentral()
 
     maven {
-        name = "GitHubKafka"
-        url = uri("https://maven.pkg.github.com/omnixys/kafka-java")
-
-        credentials {
-            username = System.getenv("GITHUB_ACTOR")
-                ?: findProperty("gpr.user") as String?
-                        ?: ""
-            password = System.getenv("GITHUB_TOKEN")
-                ?: findProperty("gpr.key") as String?
-                        ?: ""
-        }
-    }
-    maven {
         name = "GitHubContext"
         url = uri("https://maven.pkg.github.com/omnixys/context-java")
         credentials {
@@ -69,9 +56,9 @@ dependencyManagement {
 }
 
 dependencies {
-    api("com.omnixys:kafka:1.0.0")
     implementation("com.omnixys:commons:1.0.0")
     implementation("com.omnixys:context:1.0.0")
+    implementation("com.omnixys:observability:1.0.1")
 
     // Jackson for structured logs
     implementation("tools.jackson.core:jackson-databind")

@@ -1,10 +1,7 @@
 package com.omnixys.logger.autoconfigure;
 
-import com.omnixys.logger.logging.AsyncBatchLogger;
 import com.omnixys.logger.logging.OmnixysLogger;
 import com.omnixys.logger.property.LoggerProperties;
-import com.omnixys.logger.transport.LogTransport;
-import com.omnixys.observability.api.TracePropagation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.*;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -31,28 +28,9 @@ public class LoggerAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
-    public AsyncBatchLogger batch(
-            LogTransport transport,
-            TracePropagation<?> tracing,
+    public OmnixysLogger logger(
             LoggerProperties props
     ) {
-        return new AsyncBatchLogger(
-                transport,
-                tracing,
-                props.getBatch().getMaxSize(),
-                props.getBatch().getFlushIntervalMs()
-        );
-    }
-
-    @Bean
-    @ConditionalOnMissingBean
-    public OmnixysLogger logger(
-            LoggerProperties props,
-            AsyncBatchLogger batch
-    ) {
-        return new OmnixysLogger(
-                props.getServiceName(),
-                batch
-        );
+        return new OmnixysLogger(props.getServiceName());
     }
 }
