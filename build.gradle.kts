@@ -57,9 +57,9 @@ dependencyManagement {
 }
 
 dependencies {
-    implementation("com.omnixys:commons:${libs.versions.omnixys-commons.get()}")
-    implementation("com.omnixys:context:${libs.versions.omnixys-context.get()}")
-    implementation("com.omnixys:observability:${libs.versions.omnixys-observability.get()}")
+    implementation("com.omnixys:commons:${libs.versions.omnixys.commons.get()}")
+    implementation("com.omnixys:context:${libs.versions.omnixys.context.get()}")
+    implementation("com.omnixys:observability:${libs.versions.omnixys.observability.get()}")
 
     // Jackson for structured logs
     implementation("tools.jackson.core:jackson-databind")
