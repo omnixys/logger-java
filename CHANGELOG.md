@@ -3,6 +3,16 @@
 All notable changes in this project will be documented in this file.
 
 
+## [1.0.2](https://github.com/omnixys/logger-java/compare/v1.0.1...v1.0.2) (2026-07-23)
+
+### Deps
+
+* **Deps:** update ([](https://github.com/omnixys/logger-java/commit/f2eccef754fb18dfe5501284989c10ea2b8d911e))
+
+### Other
+
+* **Other:** Merge branch 'main' of https://github.com/omnixys/logger-java ([](https://github.com/omnixys/logger-java/commit/ba199cfc7aae9235dc35244e9265c9392ea54eb1))
+
 ## [1.0.1](https://github.com/omnixys/logger-java/compare/v1.0.0...v1.0.1) (2026-07-23)
 
 ### Logger
