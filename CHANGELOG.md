@@ -3,6 +3,14 @@
 All notable changes in this project will be documented in this file.
 
 
+## [1.0.3](https://github.com/omnixys/logger-java/compare/v1.0.2...v1.0.3) (2026-07-23)
+
+### Deps
+
+* **Deps:** update commons deps version ([](https://github.com/omnixys/logger-java/commit/da4fd218d023b3833e678d480f724d6497503fe0))
+* **Deps:** update commons+context+observability deps version ([](https://github.com/omnixys/logger-java/commit/b2a4b661447a0359184245e28838989192c7f8cd))
+* **Deps:** update commons+context+observability deps version ([](https://github.com/omnixys/logger-java/commit/30ec27fea48eacaef5f9e118fccf76e879504c4e))
+
 ## [1.0.2](https://github.com/omnixys/logger-java/compare/v1.0.1...v1.0.2) (2026-07-23)
 
 ### Deps
