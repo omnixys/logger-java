@@ -3,6 +3,16 @@
 All notable changes in this project will be documented in this file.
 
 
+## [1.0.5](https://github.com/omnixys/logger-java/compare/v1.0.4...v1.0.5) (2026-08-22)
+
+### Agent
+
+* **Agent:** add repository development instructions ([](https://github.com/omnixys/logger-java/commit/2e862eb2daf1727bf8eb8c0f3a440cc07e238564))
+
+### Dir
+
+* **Dir:** remove target dir ([](https://github.com/omnixys/logger-java/commit/8e652383147b70d7fe96fb991bf400db2b89c1a6))
+
 ## [1.0.4](https://github.com/omnixys/logger-java/compare/v1.0.3...v1.0.4) (2026-07-25)
 
 ### Deps
