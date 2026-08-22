@@ -47,4 +47,29 @@ class OmnixysLoggerTest {
             verifyNoInteractions(batch);
         }
     }
+
+    @Test
+    void delegatesDebugMessages() {
+        try (MockedStatic<LoggerFactory> factory = mockStatic(LoggerFactory.class)) {
+            factory.when(() -> LoggerFactory.getLogger(SERVICE)).thenReturn(delegate);
+
+            var logger = new OmnixysLogger(SERVICE);
+            logger.debug("debug {}", 1);
+
+            verify(delegate).debug("debug 1");
+        }
+    }
+
+    @Test
+    void delegatesErrorMessages() {
+        try (MockedStatic<LoggerFactory> factory = mockStatic(LoggerFactory.class)) {
+            factory.when(() -> LoggerFactory.getLogger(SERVICE)).thenReturn(delegate);
+
+            var logger = new OmnixysLogger(SERVICE);
+            var cause = new RuntimeException("cause");
+            logger.error("boom {}", cause);
+
+            verify(delegate).error("boom " + cause);
+        }
+    }
 }
