@@ -3,6 +3,21 @@
 All notable changes in this project will be documented in this file.
 
 
+## [1.0.6](https://github.com/omnixys/logger-java/compare/v1.0.5...v1.0.6) (2026-09-03)
+
+### Ci
+
+* **Ci:** add update release rule for patch releases ([](https://github.com/omnixys/logger-java/commit/11ffa8578f3c45f08f431fd1352e98d72b94d445))
+* **Ci:** align CI structure with full workflow set, 3-job release, and pinned conventionalcommits ([](https://github.com/omnixys/logger-java/commit/57a04ac622d09ae59c75c7172a13d5d100196e72))
+
+### Other
+
+* **Other:** Merge pull request #1 from omnixys/migration/uuid-v7 ([](https://github.com/omnixys/logger-java/commit/53912c86e47a4a5d231ba46b2724053687606560)), closes [#1](https://github.com/omnixys/logger-java/issues/1)
+
+### Runtime
+
+* **Runtime:** align spring boot and build toolchain to local standard ([](https://github.com/omnixys/logger-java/commit/7ddf2baaf858b0f9924a2daacbd8d2d8cb61c700))
+
 ## [1.0.5](https://github.com/omnixys/logger-java/compare/v1.0.4...v1.0.5) (2026-08-22)
 
 ### Agent
